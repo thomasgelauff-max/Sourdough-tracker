@@ -1,4 +1,6 @@
-# Sourdough Tracker: App Plan (draft for review)
+# Sourdough Tracker: App Plan
+
+Status: Phases 0, 1 and 2 built. Next: Phase 3 (planner).
 
 ## Goal
 
@@ -8,7 +10,17 @@ A small, phone-friendly app that:
 2. Plans bulk fermentation for **two loaves from one bulk**, each with its own bake time, so the long-hold loaf does not overproof in the fridge.
 3. Logs every bake so the planner gets calibrated to this specific starter, flour, kitchen and fridge.
 
-Fixed facts so far: always two loaves from one bulk, fridge at a stable ~4 °C, dough and oven temperature measured with a probe, bulk on the kitchen counter.
+Fixed facts so far: always two loaves from one bulk, fridge at a stable ~4 °C, dough and oven temperature measured with a probe, bulk on the kitchen counter. Units are grams and °C only.
+
+House recipe (preloaded default):
+- 800 g flour in the bowl: 80% white, 20% a mix of whole wheat and rye depending on what is at hand (default 10/10).
+- Starter 15–25% (default 20%), at 100% hydration.
+- Hydration 60–70% (default 65%), salt 2%.
+- 15 minutes in a KitchenAid with the spiral hook, then stretch-and-folds or coil folds depending on the dough.
+
+Two things this recipe implies for the planner:
+- 15 minutes of machine mixing heats the dough noticeably. The water temperature helper includes a "mixer heat" term to account for it, which should be measured once and then calibrated from the log.
+- 20% starter is on the high side. It makes bulk fast and the window to end it narrow. The log will show whether dropping to ~10% gives more control, especially for the loaf that stays in the fridge longest.
 
 ## Core idea behind the planner
 
@@ -42,7 +54,8 @@ Each phase ends with something usable in the kitchen.
 - True totals: includes the flour and water inside the starter.
 - Number of loaves and target dough weight per loaf → gram weights per ingredient.
 - Save recipes as templates.
-- Desired dough temperature helper: suggests water temperature from flour and kitchen temperature.
+- Desired dough temperature helper: suggests water temperature from a heat balance of flour, starter and water temperatures plus mixer heat.
+- Decimal commas accepted (Dutch keyboards).
 
 ### Phase 2: Bake log (the notepad)
 One entry per bake, with a timeline you fill in as you go:
@@ -52,7 +65,8 @@ One entry per bake, with a timeline you fill in as you go:
 - Aliquot jar readings (time, rise %) during bulk, optional.
 - End of bulk: time, dough temperature, rise %.
 - Per loaf: shaping time, fridge in, fridge out, bake time, internal temperature at end of bake.
-- Outcome per loaf: shape/spread rating (1–5), oven spring rating, crumb notes, free text, photo.
+- Folds: type (stretch-and-fold or coil) and times.
+- Outcome per loaf: shape/spread rating (1–5), oven spring rating, crumb notes, free text.
 - List view and simple per-bake summary (total bulk time, fridge hours per loaf).
 
 ### Phase 3: Planner v1 (rule-based)
@@ -73,11 +87,10 @@ The model is deliberately simple and labelled as an estimate. All constants are 
 - Link outcome ratings to fridge hours and bulk rise %, to show where your loaves start losing shape.
 
 ### Phase 5: Later, if wanted
+- Photos per loaf.
 - Charts of temperatures and rise across a bake.
 - Reminders/notifications for the next step.
 - Sync between devices.
 
-## Open points for review
-- Units: grams and °C only? (assumed yes)
-- Is a photo per loaf wanted in v1, or later?
-- Default loaf weight and default recipe to preload.
+## Open points
+- None right now.
