@@ -93,3 +93,24 @@ button.link { border: 0; background: none; color: var(--accent); padding: 4px 6p
 .templates li { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--line); }
 .toast { text-align: center; color: var(--muted); }
 code { font-size: 0.9em; }
+h3 { font-size: 0.95rem; margin: 20px 0 10px; }
+.muted { color: var(--muted); }
+textarea, select, .fold-row input, .reading-head input {
+  font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg); color: var(--text); width: 100%; min-width: 0;
+}
+textarea { resize: vertical; }
+button.now { flex-shrink: 0; }
+.derived { font-size: 0.9rem; color: var(--muted); margin: 0 0 12px; }
+.derived strong { color: var(--text); }
+.editor-bar { justify-content: space-between; margin-bottom: 16px; }
+.fold-row { display: grid; grid-template-columns: 1fr 1.4fr auto; gap: 6px; align-items: center; margin-bottom: 8px; }
+.reading { border-top: 1px solid var(--line); padding-top: 12px; margin-bottom: 4px; }
+.reading-head { display: flex; gap: 6px; align-items: center; margin-bottom: 8px; }
+.rating { display: flex; gap: 6px; }
+.rating button { flex: 1; padding: 8px 0; }
+.rating button.active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.bake-item { display: block; width: 100%; text-align: left; font: inherit; color: var(--text); cursor: pointer; }
+.bake-item-head { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.bake-item-stats { display: flex; gap: 12px; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.bake-item-loaf { font-size: 0.9rem; color: var(--muted); margin-top: 2px; }

@@ -1,6 +1,6 @@
 # Sourdough Tracker: App Plan
 
-Status: Phase 0 and Phase 1 built. Next: Phase 2 (bake log).
+Status: Phases 0, 1 and 2 built. Next: Phase 3 (planner).
 
 ## Goal
 

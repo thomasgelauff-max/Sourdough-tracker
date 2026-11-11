@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'preact/hooks';
 import { defaultData, loadData, saveData, type AppData } from '../storage/db';
 import { Calculator } from './Calculator';
 import { DataPanel } from './DataPanel';
+import { Log } from './Log';
 
 type Tab = 'calc' | 'log' | 'plan' | 'data';
 
@@ -44,7 +45,7 @@ export function App() {
       </header>
       <main>
         {tab === 'calc' && <Calculator data={data} setData={setData} />}
-        {tab === 'log' && <ComingSoon what="The bake log" phase={2} />}
+        {tab === 'log' && <Log data={data} setData={setData} />}
         {tab === 'plan' && <ComingSoon what="The fermentation planner" phase={3} />}
         {tab === 'data' && <DataPanel data={data} setData={setData} onReset={() => setData(defaultData())} />}
       </main>

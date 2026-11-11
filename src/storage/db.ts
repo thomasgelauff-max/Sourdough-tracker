@@ -2,6 +2,7 @@
 // Everything lives in the browser on this device. Use export/import for backups.
 import { get, set } from 'idb-keyval';
 import { DEFAULT_RECIPE, type Recipe } from '../calc/recipe';
+import type { Bake } from '../calc/bake';
 
 export interface TempSettings {
   kitchenTemp: number;
@@ -22,12 +23,14 @@ export interface AppData {
   draft: Recipe;
   temps: TempSettings;
   templates: Recipe[];
+  bakes: Bake[];
+  fridgeTemp: number;
 }
 
 const KEY = 'sourdough-tracker:v1';
 
 export function defaultData(): AppData {
-  return { version: 1, draft: structuredClone(DEFAULT_RECIPE), temps: { ...DEFAULT_TEMPS }, templates: [] };
+  return { version: 1, draft: structuredClone(DEFAULT_RECIPE), temps: { ...DEFAULT_TEMPS }, templates: [], bakes: [], fridgeTemp: 4 };
 }
 
 export async function loadData(): Promise<AppData> {
